@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://bes511qg2lata"]
 
+[ext_resource type="PackedScene" uid="uid://c5bsytfsqtg1d" path="res://rogue_tactics/features/battle/battle.tscn" id="1_jai1x"]
+[ext_resource type="Script" uid="uid://dcof3e7c5ft6l" path="res://rogue_tactics/_sandbox/playground.gd" id="1_qfd46"]
+
 [node name="Playground" type="Node3D" unique_id=709043426]
+script = ExtResource("1_qfd46")
+
+[node name="Battle" parent="." unique_id=1298359927 instance=ExtResource("1_jai1x")]
