@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cvmmuqyuvwbc3"]
+
+[ext_resource type="Script" uid="uid://b0a5a3vchxgms" path="res://rogue_tactics/features/battle/turn_indicator.gd" id="1_g2a1i"]
+[ext_resource type="Texture2D" uid="uid://cnglouno52kvr" path="res://rogue_tactics/features/battle/turn_indicator.png" id="1_x26rb"]
+
+[node name="TurnIndicator" type="Node3D" unique_id=1683329070 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_g2a1i")
+sprite = NodePath("Sprite3D")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1956988006]
+billboard = 1
+texture = ExtResource("1_x26rb")

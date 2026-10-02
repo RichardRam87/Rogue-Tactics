@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b6xvm18jg755p"]
+
+[ext_resource type="PackedScene" uid="uid://cvmmuqyuvwbc3" path="res://rogue_tactics/features/battle/turn_indicator.tscn" id="1_4i6xi"]
+[ext_resource type="Script" uid="uid://cidevuehxuhta" path="res://rogue_tactics/features/battle/battle_unit.gd" id="1_ct47q"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7c6fc"]
+
+[node name="BattleUnit" type="Node3D" unique_id=666715498 node_paths=PackedStringArray("turn_indicator")]
+script = ExtResource("1_ct47q")
+turn_indicator = NodePath("TurnIndicator")
+
+[node name="TurnIndicator" parent="." unique_id=1683329070 instance=ExtResource("1_4i6xi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1482886815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_7c6fc")
