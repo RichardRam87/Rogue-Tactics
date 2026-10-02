@@ -7,3 +7,5 @@
 script = ExtResource("1_qfd46")
 
 [node name="Battle" parent="." unique_id=1298359927 instance=ExtResource("1_jai1x")]
+
+[editable path="Battle"]

@@ -1,9 +1,33 @@
 [gd_scene format=3 uid="uid://c5bsytfsqtg1d"]
 
 [ext_resource type="Script" uid="uid://bubg63cq8uspa" path="res://rogue_tactics/features/battle/battle_controller.gd" id="1_xkon2"]
+[ext_resource type="Script" uid="uid://dyioum14hvjs0" path="res://rogue_tactics/features/battle/battle_grid.gd" id="2_jkwnf"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7c6fc"]
 
 [node name="Battle" type="Node3D" unique_id=1298359927]
 
 [node name="BattleController" type="Node" parent="." unique_id=1590454780]
 script = ExtResource("1_xkon2")
 metadata/_custom_type_script = "uid://bubg63cq8uspa"
+
+[node name="BattleGrid" type="Node3D" parent="." unique_id=794716129]
+script = ExtResource("2_jkwnf")
+grid_size = Vector2i(7, 7)
+cell_size = Vector2(2, 2)
+
+[node name="CombatUnit" type="Node3D" parent="." unique_id=1131404552]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CombatUnit" unique_id=374064216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_7c6fc")
+
+[node name="CombatUnit2" type="Node3D" parent="." unique_id=1946502124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CombatUnit2" unique_id=930984708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_7c6fc")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1452554781]
+transform = Transform3D(0.99999845, 0.0011386133, -0.001371255, 0, 0.7693512, 0.6388261, 0.0017823527, -0.63882506, 0.76934993, 0.36868298, 7.9704523, 8.80511)
