@@ -2,10 +2,65 @@
 
 [ext_resource type="PackedScene" uid="uid://c5bsytfsqtg1d" path="res://rogue_tactics/features/battle/battle.tscn" id="1_jai1x"]
 [ext_resource type="Script" uid="uid://dcof3e7c5ft6l" path="res://rogue_tactics/_sandbox/playground.gd" id="1_qfd46"]
+[ext_resource type="Script" uid="uid://dloi4mibp01ks" path="res://rogue_tactics/features/battle/ui/action_menu.gd" id="3_27joa"]
 
 [node name="Playground" type="Node3D" unique_id=709043426]
 script = ExtResource("1_qfd46")
 
 [node name="Battle" parent="." unique_id=1298359927 instance=ExtResource("1_jai1x")]
+
+[node name="BattleController" parent="Battle" index="0" unique_id=1590454780 node_paths=PackedStringArray("action_menu")]
+action_menu = NodePath("../HUD/Root/ActionMenu")
+
+[node name="HUD" type="CanvasLayer" parent="Battle" unique_id=1102461296]
+
+[node name="Root" type="Control" parent="Battle/HUD" unique_id=1490417786]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ActionMenu" type="PanelContainer" parent="Battle/HUD/Root" unique_id=1070454269 node_paths=PackedStringArray("move_button", "abilities_button", "wait_button")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+script = ExtResource("3_27joa")
+move_button = NodePath("MarginContainer/VBoxContainer/MoveButton")
+abilities_button = NodePath("MarginContainer/VBoxContainer/AbilitiesButton")
+wait_button = NodePath("MarginContainer/VBoxContainer/WaitButton")
+
+[node name="MarginContainer" type="MarginContainer" parent="Battle/HUD/Root/ActionMenu" unique_id=1769385273]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Battle/HUD/Root/ActionMenu/MarginContainer" unique_id=1188827639]
+layout_mode = 2
+
+[node name="MoveButton" type="Button" parent="Battle/HUD/Root/ActionMenu/MarginContainer/VBoxContainer" unique_id=403098627]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Move"
+alignment = 0
+
+[node name="AbilitiesButton" type="Button" parent="Battle/HUD/Root/ActionMenu/MarginContainer/VBoxContainer" unique_id=1531899197]
+layout_mode = 2
+text = "Abilities"
+alignment = 0
+
+[node name="WaitButton" type="Button" parent="Battle/HUD/Root/ActionMenu/MarginContainer/VBoxContainer" unique_id=2068371610]
+layout_mode = 2
+text = "Wait
+"
+alignment = 0
 
 [editable path="Battle"]
